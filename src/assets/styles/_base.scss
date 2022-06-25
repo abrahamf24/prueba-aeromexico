@@ -1,0 +1,58 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body, html{
+    font-size: $font-size-mobile;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: $breakpoint-xs) {
+    body, html{ font-size: $font-size-xs; }
+}
+@media (min-width: $breakpoint-sm) {
+    body, html{ font-size: $font-size-sm; }
+}
+@media (min-width: $breakpoint-md) {
+    body, html{ font-size: $font-size-md; }
+}
+@media (min-width: $breakpoint-lg) {
+    body, html{ font-size: $font-size-lg; }
+}
+@media (min-width: $breakpoint-xl) {
+    body, html{ font-size: $font-size-xl; }
+}
+@media (min-width: $breakpoint-2xl) {
+    body, html{ font-size: $font-size-2xl; }
+}
+
+
+body{
+    font-family: $font-primary;
+    color: $text-secondary;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.8rem;
+}
+h3{
+    font-size: 1.6rem;
+}
+h4{
+    font-size: 1.4rem;
+}
+h5{
+    font-size: 1.2rem;
+}
+h6{
+    font-size: 1rem;
+}
+
+h2, h3, h4, h5, h6{
+    font-weight: 600;
+}
