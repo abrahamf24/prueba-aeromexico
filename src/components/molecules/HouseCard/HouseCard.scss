@@ -1,0 +1,125 @@
+.house-card{
+  display: flex;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-xs) {
+    flex-direction: row;
+  }
+
+  &__picture-container{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (min-width: $breakpoint-xs) {
+      max-width: 160px;
+      min-width: 140px;
+    }
+  }
+  &--slytherin{
+    .house-card__picture-container{
+      background: linear-gradient(135deg, #1C792B 0%, #82E95E 100%);
+    }
+  }
+  &--ravenclaw{
+    .house-card__picture-container{
+      background: linear-gradient(135deg, #0597B7 0%, #66D1FF 100%);
+    }
+  }
+  &--hufflepuff{
+    .house-card__picture-container{
+      background: linear-gradient(135deg, #FFC700 0%, #FFF388 100%);
+    }
+  }
+  &--gryffindor{
+    .house-card__picture-container{
+      background: linear-gradient(358.61deg, #FF0000 4.67%, #FED482 96.97%);
+    }
+  }
+
+
+  &__picture{
+    width: 50%;
+    min-width: 70px;
+
+    @media (min-width: $breakpoint-xs) {
+      width: 100%;
+    }
+  }
+
+  &__content-container{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &--dead{
+    .house-card__content-container{
+      background: #CCCCCC;
+    }
+  }
+
+
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    order:2;
+    align-items: center;
+
+    @media (min-width: $breakpoint-xs) {
+      order: 1;
+    }
+  }
+  &__note{
+    color: #999999;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-xs) {
+      display: block;
+    }
+  }
+  &__note-separator{
+    display: none;
+
+    @media (min-width: $breakpoint-xs) {
+      display: inline;
+    }
+  }
+  &__name{
+    margin: 0 0 1.5rem 0;
+    width: 100%;
+    text-align: center;
+    order: 1;
+
+    @media (min-width: $breakpoint-xs) {
+      text-align: left;
+      order: 2;
+      margin: 1.5rem 0;
+    }
+  }
+  &__content{
+    font-size: 0.8rem;
+    display: none;
+    flex-direction: column;
+    order: 3;
+
+    @media (min-width: $breakpoint-xs) {
+      display: flex;
+    }
+  }
+  &__characteristic{
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+}

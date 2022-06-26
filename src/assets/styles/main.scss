@@ -3,3 +3,8 @@
 @import '_variables.scss';
 @import '_utils.scss';
 @import '_base.scss';
+
+@import '../../components/atoms/Button/Button.scss';
+@import '../../components/atoms/Icon/Icon.scss';
+
+@import '../../components/molecules/HouseCard/HouseCard.scss';

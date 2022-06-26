@@ -1,11 +1,22 @@
 html{
     scroll-behavior: smooth;
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+            box-sizing: inherit;
 }
 
 body, html{
     font-size: $font-size-mobile;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 @media (min-width: $breakpoint-xs) {
