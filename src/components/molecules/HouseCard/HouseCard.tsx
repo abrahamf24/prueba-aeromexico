@@ -1,8 +1,8 @@
 import React from 'react'
 import { getAllowedClasses } from '../../../library/utils'
 import { Icon } from '../../atoms/Icon'
-import bookmarkSrc from '../../../../public/img/bookmark.svg'
-import activeBookmarkSrc from '../../../../public/img/active-bookmark.svg'
+import bookmarkSrc from '../../../assets/img/bookmark.svg'
+import activeBookmarkSrc from '../../../assets/img/active-bookmark.svg'
 import { Character, CharacterStatus, CharacterType, House } from '../../../library/types'
 
 type HouseCardProps = {

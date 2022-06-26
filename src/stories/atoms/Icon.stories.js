@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '../../components';
-import iconImage from '../../../public/img/bookmark.svg'
+import iconImage from '../../assets/img/bookmark.svg'
 
 export default {
   title: 'Diseño base/Atomos/Icon',

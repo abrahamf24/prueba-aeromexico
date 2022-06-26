@@ -1,6 +1,6 @@
 import React from 'react';
 import { HouseCard } from '../../components';
-import image from '../../../public/img/draco.png'
+import image from '../../assets/img/draco.png'
 
 const character = {
   picture: image,
