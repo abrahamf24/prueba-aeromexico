@@ -24,3 +24,8 @@ export type Character = {
     characteristics: {[key: string]: string}
     isFavorite: boolean
 }
+
+export enum Filter {
+    'Estudiantes' = 'Estudiantes',
+    'Staff' = 'Staff',
+}

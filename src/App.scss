@@ -30,4 +30,10 @@ body{
     &__filter-button{
         width: 18%;
     }
+
+    &__status{
+        margin: 2rem 0;
+        color: $text-white;
+        font-style: italic;
+    }
 }

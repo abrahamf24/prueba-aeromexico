@@ -15,4 +15,8 @@
   &:active{
     background-color: $bg-secondary;
   }
+
+  &--disable{
+    cursor: not-allowed;
+  }
 }
