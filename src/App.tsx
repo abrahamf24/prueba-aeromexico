@@ -51,7 +51,12 @@ function App() {
       &nbsp;
     </span>
 
-    { filteredCharacters.map(character => <HouseCard key={character.name} character={character}></HouseCard>) }
+    <div className="app__characters-container">
+      { filteredCharacters.map(character => <div className="app__character-wrapper" key={character.name}>
+        <HouseCard character={character}></HouseCard>
+      </div>) }
+    </div>
+    
   </div>
 }
 
