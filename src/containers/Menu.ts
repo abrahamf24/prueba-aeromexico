@@ -1,25 +1,25 @@
 import { connect } from 'react-redux'
 import { toggleFavoriteCharacter } from '../actions'
-import { HouseCard } from '../components'
+import { Menu as MainMenu } from '../components'
 import { Character } from '../library/types'
 
 const mapStateToProps = (state, props) => {
   return {
-    isFavorite: state.characters.favorites.find(favorite => favorite.name === props.character.name)
+    favorites: state.characters.favorites
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onToggleFavorite: (character: Character) => {
+    onDeleteFavorite: (character: Character) => {
       dispatch(toggleFavoriteCharacter(character))
     }
   }
 }
 
-const CharacterHouseCard = connect(
+const Menu = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HouseCard)
+)(MainMenu)
 
-export default CharacterHouseCard
+export default Menu

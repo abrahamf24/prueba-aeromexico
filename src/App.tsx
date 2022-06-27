@@ -3,8 +3,9 @@ import { useSelector, useDispatch, useStore } from 'react-redux';
 import { addCharacter, setCharacters, setFetchingCharacters, setFilters } from './actions';
 import { getCharacters } from './api';
 import logo from './assets/img/logo.svg'
-import { Button, HouseCard } from './components'
+import { Button } from './components'
 import CharacterHouseCard from './containers/CharacterHouseCard';
+import Menu from './containers/Menu';
 import { Filter, House } from './library/types';
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
   }, [filters])
 
   return <div className="app">
+    <Menu favorites={filteredCharacters}></Menu>
+
     <img className="app__logo" src={logo}/>
     <h4 className="app__filter-label">Selecciona tu filtro</h4>
     <div className="app__filters">

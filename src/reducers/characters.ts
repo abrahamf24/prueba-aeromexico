@@ -12,7 +12,7 @@ type CharactersState = {
   characters: Character[]
   isFetching: boolean
   error: string|null
-  favorites: string[]
+  favorites: Character[]
 }
 
 const characters = (state: CharactersState = defaultState, action) => {
@@ -51,10 +51,10 @@ const characters = (state: CharactersState = defaultState, action) => {
     case TOGGLE_FAVORITE_CHARACTER:
       let newFavorites = [...state.favorites]
 
-      if(state.favorites.includes(action.name)){
-        newFavorites = state.favorites.filter(favorite => favorite != action.name)
-      }else{
-        newFavorites.push(action.name)
+      if(state.favorites.find((favorite) => action.character.name === favorite.name)){
+        newFavorites = state.favorites.filter(favorite => favorite.name != action.character.name)
+      }else if(newFavorites.length < 5){
+        newFavorites.push(action.character)
       }
       
       return {

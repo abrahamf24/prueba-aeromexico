@@ -7,7 +7,7 @@ import { Character, CharacterStatus, CharacterType, House } from '../../../libra
 
 export type HouseCardProps = {
   character: Character
-  onToggleFavorite?: (name: string) => {},
+  onToggleFavorite?: (character: Character) => void,
   isFavorite: boolean
 }
 
@@ -37,7 +37,7 @@ export default function HouseCard({ character, onToggleFavorite, isFavorite, ...
         </span>
 
         <Icon src={isFavorite ? activeBookmarkSrc : bookmarkSrc} onClick={(event: React.MouseEvent<HTMLImageElement>) => {
-          if(onToggleFavorite) onToggleFavorite(name)
+          if(onToggleFavorite) onToggleFavorite(character)
         }}></Icon>
       </div>
 

@@ -47,9 +47,9 @@ export const setFetchingCharacters = (
 }
 
 
-export const toggleFavoriteCharacter = (name: string) => {
+export const toggleFavoriteCharacter = (character: Character) => {
   return {
     type: TOGGLE_FAVORITE_CHARACTER,
-    name: name
+    character
   }
 }
