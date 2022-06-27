@@ -18,20 +18,20 @@ type CharactersState = {
 const characters = (state: CharactersState = defaultState, action) => {
   switch (action.type) {
     case ADD_CHARACTER:
-      return {
-        ...state,
-        characters: [
-          ...state.characters,
-          {
-            name: action.name,
-            gender: action.gender,
-            house: action.house,
-            dateOfBirth: action.dateOfBirth,
-            eyeColour: action.eyeColour,
-            hairColour: action.hairColour
-          }
-        ]
+      if(state.characters.find(character => character.type === action.character.type)) {
+        return {
+          ...state,
+          characters: [
+            ...state.characters,
+            {
+              ...action.character
+            }
+          ]
+        }
       }
+
+      return state
+      
 
     case SET_CHARACTERS:
       return {

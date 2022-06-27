@@ -87,3 +87,14 @@
         }
     }
 }
+
+
+.modal-add-character{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__column{
+        width: 48%;
+    }
+}

@@ -1,0 +1,17 @@
+.input-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &__label{
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+        font-weight: 400;
+        color: $text-light-dark;
+        width: 100%;
+    }
+    &__inputs{
+        width: 100%;
+    }
+}

@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { getAllowedClasses } from '../../../library/utils'
-import { Icon } from '../../atoms/Icon'
 import bookmarkSrc from '../../../assets/img/bookmark-white.svg'
 import userSrc from '../../../assets/img/user.svg'
-import deleteSrc from '../../../assets/img/delete.svg'
-import { Character, CharacterStatus, CharacterType, House } from '../../../library/types'
-import {MenuItem} from '../..'
+import { Character } from '../../../library/types'
+import { MenuItem } from '../..'
+import MenuFavoritesList from './MenuFavoritesList'
+import AddCharacterModal from './AddCharacterModal'
 
 export type MenuProps = {
   favorites: Character[]
@@ -17,21 +17,14 @@ export default function Menu({ favorites, onDeleteFavorite, ...props }: MenuProp
     'menu': true,
   })
 
+  const [showModal, setShowModal] = useState(false)
+
   return <div className={classList}>
     <MenuItem className="menu__favorites" iconSrc={bookmarkSrc} label='FAVORITOS'>
-      <div className="menu__favorites-list">
-        { favorites.map(favorite => <div key={favorite.name} className="menu__favorite">
-          <div className="menu__favorite-wrapper">
-            <img className="menu__favorite-picture" src={favorite.picture}/>
-            <span className="menu__favorite-name">{favorite.name}</span>
-            <Icon className="menu__favorite-delete" src={deleteSrc} onClick={() => {
-              if(onDeleteFavorite) onDeleteFavorite(favorite)}
-            }></Icon>
-          </div>
-        </div>) }
-      </div>
+      <MenuFavoritesList favorites={favorites} onDeleteFavorite={onDeleteFavorite}></MenuFavoritesList>
     </MenuItem>
 
-    <MenuItem iconSrc={userSrc} label='AGREGAR'></MenuItem>
+    <MenuItem iconSrc={userSrc} label='AGREGAR' onClick={() => setShowModal(true)}></MenuItem>
+    <AddCharacterModal show={showModal} onClose={() => setShowModal(false) }></AddCharacterModal>
   </div>
 }

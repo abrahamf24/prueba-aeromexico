@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch, useStore } from 'react-redux';
-import { addCharacter, setCharacters, setFetchingCharacters, setFilters } from './actions';
+import { setCharacters, setFetchingCharacters, setFilters } from './actions';
 import { getCharacters } from './api';
 import logo from './assets/img/logo.svg'
 import { Button } from './components'

@@ -4,6 +4,7 @@ import './assets/styles/main.scss'
 import App from './App'
 import { Provider } from 'react-redux'
 import store from './store'
+import {NotificationContainer} from 'react-notifications';
 
 const rootElem = document.getElementById('root')
 if(rootElem){
@@ -12,6 +13,7 @@ if(rootElem){
     <React.StrictMode>
       <Provider store={store}>
         <App />
+        <NotificationContainer/>
       </Provider>
     </React.StrictMode>
   )

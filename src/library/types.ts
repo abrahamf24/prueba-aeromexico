@@ -17,7 +17,7 @@ export enum CharacterType {
 
 export type Character = {
     picture: string
-    house: House
+    house?: House
     status: CharacterStatus
     type: CharacterType
     name: string

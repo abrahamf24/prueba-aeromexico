@@ -5,22 +5,10 @@ export const SET_CHARACTERS = 'SET_CHARACTERS'
 export const SET_FETCHING_CHARACTERS = 'SET_FETCHING_CHARACTERS'
 export const TOGGLE_FAVORITE_CHARACTER = 'TOGGLE_FAVORITE_CHARACTER'
 
-export const addCharacter = (
-  name: string,
-  gender: string,
-  house: House,
-  dateOfBirth: string,
-  eyeColour: string,
-  hairColour: string
-) => {
+export const addCharacter = (character: Character) => {
   return {
     type: ADD_CHARACTER,
-    name,
-    gender,
-    house,
-    dateOfBirth,
-    eyeColour,
-    hairColour,
+    character: character
   }
 }
 

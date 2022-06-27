@@ -6,11 +6,16 @@
 
 @import '../../components/atoms/Button/Button.scss';
 @import '../../components/atoms/Icon/Icon.scss';
+@import '../../components/atoms/Input/Input.scss';
 
 @import '../../components/molecules/HouseCard/HouseCard.scss';
 @import '../../components/molecules/MenuItem/MenuItem.scss';
+@import '../../components/molecules/Modal/Modal.scss';
+@import '../../components/molecules/InputGroup/InputGroup.scss';
 
 @import '../../components/organisms/Menu/Menu.scss';
 
 
 @import '../../App.scss';
+
+@import 'react-notifications/lib/notifications.css'

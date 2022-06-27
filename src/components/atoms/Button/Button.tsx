@@ -5,7 +5,7 @@ type ButtonProps = {
   className?: string
   children: JSX.Element|string
   disable?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => {}
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export default function Button({ className, children, disable, onClick, ...props }: ButtonProps) {
