@@ -3,6 +3,7 @@ import { Character, House } from "../library/types"
 export const ADD_CHARACTER = 'ADD_CHARACTER'
 export const SET_CHARACTERS = 'SET_CHARACTERS'
 export const SET_FETCHING_CHARACTERS = 'SET_FETCHING_CHARACTERS'
+export const TOGGLE_FAVORITE_CHARACTER = 'TOGGLE_FAVORITE_CHARACTER'
 
 export const addCharacter = (
   name: string,
@@ -42,5 +43,13 @@ export const setFetchingCharacters = (
     type: SET_FETCHING_CHARACTERS,
     isFetching,
     error
+  }
+}
+
+
+export const toggleFavoriteCharacter = (name: string) => {
+  return {
+    type: TOGGLE_FAVORITE_CHARACTER,
+    name: name
   }
 }

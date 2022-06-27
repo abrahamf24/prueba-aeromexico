@@ -5,13 +5,14 @@ import bookmarkSrc from '../../../assets/img/bookmark.svg'
 import activeBookmarkSrc from '../../../assets/img/active-bookmark.svg'
 import { Character, CharacterStatus, CharacterType, House } from '../../../library/types'
 
-type HouseCardProps = {
+export type HouseCardProps = {
   character: Character
-  onClick?: (event: React.MouseEvent<HTMLImageElement>) => {}
+  onToggleFavorite?: (name: string) => {},
+  isFavorite: boolean
 }
 
-export default function HouseCard({ character, ...props }: HouseCardProps) {
-  const {picture, house, status, type, name, characteristics, isFavorite} = character
+export default function HouseCard({ character, onToggleFavorite, isFavorite, ...props }: HouseCardProps) {
+  const {picture, house, status, type, name, characteristics} = character
 
   const classList = getAllowedClasses({
     'house-card': true,
@@ -35,12 +36,14 @@ export default function HouseCard({ character, ...props }: HouseCardProps) {
           <span>{ CharacterType[type].toUpperCase() }</span>
         </span>
 
-        <Icon src={isFavorite ? activeBookmarkSrc : bookmarkSrc}></Icon>
+        <Icon src={isFavorite ? activeBookmarkSrc : bookmarkSrc} onClick={(event: React.MouseEvent<HTMLImageElement>) => {
+          if(onToggleFavorite) onToggleFavorite(name)
+        }}></Icon>
       </div>
 
       <h3 className="house-card__name">{ name }</h3>
       <div className="house-card__content">
-        { Object.keys(characteristics).map( characteristic => <span className="house-card__characteristic"><b>{ characteristic }:</b> {characteristics[characteristic]}</span>) }
+        { Object.keys(characteristics).map( (characteristic, index) => <span key={index} className="house-card__characteristic"><b>{ characteristic }:</b> {characteristics[characteristic]}</span>) }
       </div>
     </div>
   </div>

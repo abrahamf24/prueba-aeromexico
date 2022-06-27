@@ -1,12 +1,21 @@
-import { ADD_CHARACTER, SET_CHARACTERS, SET_FETCHING_CHARACTERS } from "../actions"
+import { Character } from './../library/types';
+import { ADD_CHARACTER, SET_CHARACTERS, SET_FETCHING_CHARACTERS, TOGGLE_FAVORITE_CHARACTER } from "../actions"
 
 const defaultState = {
   characters: [],
   isFetching: false,
   error: null,
+  favorites: []
 }
 
-const characters = (state = defaultState, action) => {
+type CharactersState = {
+  characters: Character[]
+  isFetching: boolean
+  error: string|null
+  favorites: string[]
+}
+
+const characters = (state: CharactersState = defaultState, action) => {
   switch (action.type) {
     case ADD_CHARACTER:
       return {
@@ -37,6 +46,20 @@ const characters = (state = defaultState, action) => {
         ...state,
         isFetching: action.isFetching,
         error: action.error
+      }
+
+    case TOGGLE_FAVORITE_CHARACTER:
+      let newFavorites = [...state.favorites]
+
+      if(state.favorites.includes(action.name)){
+        newFavorites = state.favorites.filter(favorite => favorite != action.name)
+      }else{
+        newFavorites.push(action.name)
+      }
+      
+      return {
+        ...state,
+        favorites: newFavorites
       }
     
     default:

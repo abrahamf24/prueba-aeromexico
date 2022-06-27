@@ -22,7 +22,6 @@ export type Character = {
     type: CharacterType
     name: string
     characteristics: {[key: string]: string}
-    isFavorite: boolean
 }
 
 export enum Filter {

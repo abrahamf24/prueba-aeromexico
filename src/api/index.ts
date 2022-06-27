@@ -8,7 +8,6 @@ const mapApiCharacterToCharacterType = (data: {[key: string]: any}): Character =
     status: data.alive ? CharacterStatus.Vivo : CharacterStatus.Muerto,
     picture: data.image,
     name: data.name,
-    isFavorite: false,
     house: data.house,
     characteristics: {
       'Cumpleaños': data.dateOfBirth,

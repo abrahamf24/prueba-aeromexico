@@ -4,6 +4,7 @@ import { addCharacter, setCharacters, setFetchingCharacters, setFilters } from '
 import { getCharacters } from './api';
 import logo from './assets/img/logo.svg'
 import { Button, HouseCard } from './components'
+import CharacterHouseCard from './containers/CharacterHouseCard';
 import { Filter, House } from './library/types';
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
 
     <div className="app__characters-container">
       { filteredCharacters.map(character => <div className="app__character-wrapper" key={character.name}>
-        <HouseCard character={character}></HouseCard>
+        <CharacterHouseCard character={character}></CharacterHouseCard>
       </div>) }
     </div>
     
