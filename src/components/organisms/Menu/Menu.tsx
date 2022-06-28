@@ -19,12 +19,15 @@ export default function Menu({ favorites, onDeleteFavorite, ...props }: MenuProp
 
   const [showModal, setShowModal] = useState(false)
 
-  return <div className={classList}>
-    <MenuItem className="menu__favorites" iconSrc={bookmarkSrc} label='FAVORITOS'>
-      <MenuFavoritesList favorites={favorites} onDeleteFavorite={onDeleteFavorite}></MenuFavoritesList>
-    </MenuItem>
+  return <>
+    <div className={classList}>
+      <MenuItem className="menu__favorites" iconSrc={bookmarkSrc} label='FAVORITOS'>
+        <MenuFavoritesList favorites={favorites} onDeleteFavorite={onDeleteFavorite}></MenuFavoritesList>
+      </MenuItem>
 
-    <MenuItem iconSrc={userSrc} label='AGREGAR' onClick={() => setShowModal(true)}></MenuItem>
+      <MenuItem iconSrc={userSrc} label='AGREGAR' onClick={() => setShowModal(true)}></MenuItem>
+    </div>
+
     <AddCharacterModal show={showModal} onClose={() => setShowModal(false) }></AddCharacterModal>
-  </div>
+  </>
 }
